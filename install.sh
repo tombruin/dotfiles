@@ -21,7 +21,7 @@ sed -i '1 i\HISTFILE=/commandhistory/.zsh_history' ~/.zshrc
 sed -i 's/\(^plugins=([^)]*\)/\1 zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search/' ~/.zshrc
 
 zsh -c 'git clone https://github.com/spaceship-prompt/spaceship-prompt.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt --depth=1'
-zsh -c 'ln -s "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"'
+zsh -c 'ln -s ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt/spaceship.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship.zsh-theme'
 
 # update theme
 sed -i '/^ZSH_THEME/c\ZSH_THEME="spaceship"' ~/.zshrc
