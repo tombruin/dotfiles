@@ -18,7 +18,10 @@ zsh -c 'git clone https://github.com/zsh-users/zsh-history-substring-search ${ZS
 
 
 sed -i '1 i\HISTFILE=/commandhistory/.zsh_history' ~/.zshrc
-sed -i 's/\(^plugins=([^)]*\)/\1 zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search/' ~/.zshrc
+sed -i '1 i\export LC_ALL=en_US.UTF-8' ~/.zshrc
+sed -i '1 i\export LANG=en_US.UTF-8' ~/.zshrc
+
+sed -i 's/\(^plugins=([^)]*\)/\1 zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting/' ~/.zshrc
 
 zsh -c 'git clone https://github.com/spaceship-prompt/spaceship-prompt.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt --depth=1'
 zsh -c 'ln -s ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt/spaceship.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship.zsh-theme'
